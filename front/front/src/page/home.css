@@ -1,0 +1,42 @@
+.img{
+
+
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.img img{
+   width: 100%;
+   height: 600px;
+
+   background-color: rgb(253, 253, 253);
+}
+.text{
+   
+    padding: 10px 22px;
+    margin-top: 40px;
+}
+.text h1{
+font-weight: 500;
+ text-align: center;
+
+}
+.cards{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+margin-top: 200px;
+align-items: center;
+justify-items: center
+}
+.cards div{
+    width: 290px;
+    height:400px;
+    background-color: aqua;
+
+}
+.cards div img{
+    width: 290px;
+    height: 220px;
+    border-radius: 4px;
+}
+
