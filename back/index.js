@@ -16,7 +16,7 @@ app.use(cors())
 app.use(Cadastro)
 
 
-
+ 
 
 app.get("/", async (req, res) => {
   //const users = await Cadastro.findAll();

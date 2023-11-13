@@ -12,9 +12,9 @@ router.post("/login",cadastroController.createLogin)
 
 router.get("/user/:id",checkToken, cadastroController.userValidation)
 
-//router.post("/product",upload.array("file"),productController.getProducts  )
+router.post("/store",productController.createProduct  )
 
-router.get("/store", checkToken, productController.getProducts )
+router.get("/store",  productController.getProducts )
 
 
-module.exports = router;
+module.exports = router; 

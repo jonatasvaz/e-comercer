@@ -6,17 +6,28 @@ const Product = require("../model/modelProduct")
     createProduct:  async (req, res) => {
 
         const product = new Product({
-           name : req.body.name,
+          name_ : req.body. name_,
             price : req.body.price,
-            image : req.body.image,
-            brand : req.body.brand,
+            image : req.body.image, 
+            brand : req.body.brand, 
             category : req.body.category,
             countInStock : req.body.countInStock,
-            description : req.body.description,
+            description : req.body.description
             
-      
+       
 
         });
+         
+         const productTest = { 
+          name_product : "laptop",
+          price:"890",
+          image:"laptop",
+          brand:"hp", 
+          category:"eletronic",
+          countInStock:"45",
+          description_product:"the better laptop in the world" 
+         };
+
         const newProduct = await product.save();
         if (newProduct) {
           return res
