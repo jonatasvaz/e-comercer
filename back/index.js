@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const express = require("express");
 const app = express();
 const bodyParse = require("body-parser");
-const upload = require("./controllers/upload")
 const Cadastro = require("./route/cadastro")
 
 
@@ -15,7 +14,7 @@ app.use(cors())
 
 
 app.use(Cadastro)
-app.use( "s3",upload)
+
 
 
 

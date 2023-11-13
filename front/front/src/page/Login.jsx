@@ -1,6 +1,6 @@
 import { Link ,useNavigate} from "react-router-dom";
 import "./Login.css"
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 
 import axios from "axios";
 function Login() {
@@ -8,7 +8,16 @@ function Login() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
- 
+  const [authToken, setAuthToken] = useState('');
+
+
+  useEffect(()=>{ 
+    const getToken= localStorage.getItem("token")
+  })
+
+
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,13 +25,22 @@ function Login() {
  
     try {
       
-      const response = await axios.post('http://localhost:3000/login', {
+      const response = await axios.post('http://localhost:3000/login',{
         email: email,
         password: password,
       });
-      console.log('Response:', response.data);
+
+     
       if(response){
-       console.log("d")
+        const token= response.data.token
+      
+       
+          localStorage.setItem("token", token);
+       
+       
+
+        setAuthToken(token)
+       console.log(token)
          navigate("/")
       }
     } catch (error) {

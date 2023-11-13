@@ -32,7 +32,12 @@ justify-items: center
     width: 290px;
     height:400px;
     background-color: aqua;
+    border-radius: 6px;
+}
+.cards div:hover{
+    border: 2px solid gray;
 
+ 
 }
 .cards div img{
     width: 290px;
@@ -40,3 +45,10 @@ justify-items: center
     border-radius: 4px;
 }
 
+.cards div p{
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+
+
+}

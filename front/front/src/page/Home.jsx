@@ -23,12 +23,18 @@ function Home() {
    <div className='cards'>
       <div>
         <img src={img1} alt=''/>
+        <p>This is a website selling high quality electronic products that will provide you with a better experience.
+        Here we have the best prices and products ready for your needs</p>
       </div>
       <div>
       <img src={img2} alt=''/>
+      <p>This is a website selling high quality electronic products that will provide you with a better experience.
+        Here we have the best prices and products ready for your needs</p>
       </div>
       <div>
       <img src={img3} alt=''/>
+      <p>This is a website selling high quality electronic products that will provide you with a better experience.
+        Here we have the best prices and products ready for your needs</p>
       </div>
   </div>
  </>
