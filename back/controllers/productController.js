@@ -6,16 +6,17 @@ const Product = require("../model/modelProduct")
     createProduct:  async (req, res) => {
 
         const product = new Product({
+      
           name_ : req.body. name_,
             price : req.body.price,
             image : req.body.image, 
-            brand : req.body.brand, 
+            brand : req.body.brand,  
             category : req.body.category,
             countInStock : req.body.countInStock,
-            description : req.body.description
+            descriptio : req.body.descriptio
             
        
-
+  
         });
          
          const productTest = { 
@@ -41,9 +42,19 @@ const Product = require("../model/modelProduct")
         const find = await Product.findAll()
 
         res.json(find)
-        
+          
+      },
+      getOneProduct   : async (req,res)=>{
+        const { id } = req.params; 
+        const find = await Product.findByPk(id);
+
+        if (!find) {
+          return res.status(404).json({ error: 'Produto não encontrado' });
+        }
+    
+        res.json(find);
+       
       }
-     
  }
 
- module.exports = productController
+ module.exports = productController  

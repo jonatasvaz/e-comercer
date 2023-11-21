@@ -7,11 +7,11 @@ const Cadastro = sequelize.define("cadastro", {
     allowNull: false
   },
   email: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING, 
     allowNull: false
   },
   password: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING,  
   }
 });
 

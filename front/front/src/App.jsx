@@ -9,6 +9,7 @@ import Login from './page/Login';
 import PrivateRoute from './PrivateRoute';
 import "./app.css"
 import Profile from './page/Profile';
+import Product from './page/Productone';
 function App() {
  
   return (
@@ -22,6 +23,7 @@ function App() {
       <Route element={<PrivateRoute/>} >
            <Route path='/store'  element={<Store/>}/>
            <Route path='/profile'  element={<Profile/>}/>
+           <Route path='/store/:id' element={<Product/>}/>
       </Route>
 
      <Route  path="/login" element={<Login/>} />

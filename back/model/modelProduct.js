@@ -7,14 +7,14 @@ const Product = sequelize.define("product", {
         autoIncrement: true,
         allowNull: false,
         primaryKey: true
-    },
+    },  
     name_: {
     type: DataTypes.STRING,
     allowNull: false
   },
   
   price: {
-    type: DataTypes.FLOAT,
+    type: DataTypes.INTEGER,
     allowNull:null
   },
   image: {
@@ -22,7 +22,7 @@ const Product = sequelize.define("product", {
  
   },
   brand: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING, 
  
   },
   category: {
@@ -32,14 +32,16 @@ const Product = sequelize.define("product", {
   countInStock: {
     type: DataTypes.INTEGER,
  
-  },
-  description: {
+  }, 
+  descriptio: {
     type: DataTypes.TEXT,
  
-  },
- 
- 
-});
+  }
+},
+{
+  timestamps: false
+}
+);
 
 module.exports = Product;
 
