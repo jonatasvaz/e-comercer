@@ -10,6 +10,11 @@ import PrivateRoute from './PrivateRoute';
 import "./app.css"
 import Profile from './page/Profile';
 import Product from './page/Productone';
+import Payment from './page/payment';
+import ShoppingCart from './page/ShoppingCart';
+
+
+
 function App() {
  
   return (
@@ -21,9 +26,13 @@ function App() {
       <Route  path="/register" element={<Register/>} />
 
       <Route element={<PrivateRoute/>} >
+        <Route path='/payment' element={<Payment/>}/>
            <Route path='/store'  element={<Store/>}/>
            <Route path='/profile'  element={<Profile/>}/>
            <Route path='/store/:id' element={<Product/>}/>
+           <Route path='/shoppingcart' element={<ShoppingCart/>}/>
+           <Route path='/payment' element={<Payment/>}/>
+     
       </Route>
 
      <Route  path="/login" element={<Login/>} />

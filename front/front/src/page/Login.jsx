@@ -30,7 +30,7 @@ function Login() {
         password: password,
       });
 
-     
+     console.log(response)
       if(response){
         const token= response.data.token
       

@@ -1,13 +1,44 @@
 import React, { useState,useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, json, useParams } from 'react-router-dom';
 import "./Productone.css"
 import laptop from "../upload/laptop.jpg"
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import axios from "axios"
+
 function Productone() {
  
     const { id } = useParams();
     const [produto, setProduto] = useState();
-  console.log(id)
+    const [quantity, setQuantity] = useState(1);
+    
+  
+
+
+ const handleAdd= async(e)=>{
+e.preventDefault()
+
+const data=[{
+  id:produto.id,
+  name:produto.name_,
+  price:produto.price,
+  brand:produto.brand
+}]
+
+const getItem = JSON.parse(localStorage.getItem("carrinho"))
+const get =[]
+if(getItem){
+ 
+  data.push(getItem)
+ localStorage.setItem("carrinho",JSON.stringify(data))
+
+}
+
+localStorage.setItem("carrinho",JSON.stringify(data))
+
+
+ }
+
+
     useEffect(() => {
      
         const fetchProduto = async () => {
@@ -46,20 +77,26 @@ console.log(produto)
         <p className='brand-product'>brand:  {produto.brand}</p>
         <p className='category-product'>category:  {produto.category}</p>
         <p className='countinstock-product'>in stock:  {produto.countInStock}</p>
-
-
+       
         <div className='btn-shopping'>
+          <div>
+           <input type='number' min="1" max="6" value={quantity} onChange={e => setQuantity(e.target.value)}/>
+          </div>
+          <div>
         <Link>
          <button  className='btn-buy'>
           BUY
          </button>
         </Link>
+        </div>
+        <div>
         <Link>
-        <button className='btn-addshopping'>
+        <button className='btn-addshopping' onClick={handleAdd}>
         <AddShoppingCartIcon/>
         </button>
     
         </Link>
+        </div>
       </div>  
       </div>
     
