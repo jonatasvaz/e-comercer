@@ -37,7 +37,7 @@ function Store() {
 
         <div>
         <Link to={`/store/${item.id}`}>
-        <button className='btn-one'>buy</button>
+        <button className='btn-one'>see more</button>
         </Link>
        
         </div>

@@ -1,12 +1,12 @@
 import React, { useState,useEffect } from 'react';
-import { Link, json, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import "./Productone.css"
 import laptop from "../upload/laptop.jpg"
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import axios from "axios"
 
 function Productone() {
- 
+   const navigate= useNavigate()
     const { id } = useParams();
     const [produto, setProduto] = useState();
     const [quantity, setQuantity] = useState(1);
@@ -17,25 +17,29 @@ function Productone() {
  const handleAdd= async(e)=>{
 e.preventDefault()
 
-const data=[{
+const data= [{
   id:produto.id,
   name:produto.name_,
   price:produto.price,
   brand:produto.brand
 }]
-
+console.log(data)
 const getItem = JSON.parse(localStorage.getItem("carrinho"))
+
 const get =[]
 if(getItem){
  
-  data.push(getItem)
- localStorage.setItem("carrinho",JSON.stringify(data))
+  const a= data.push(getItem)
+  console.log(a)
+ localStorage.setItem("carrinho",JSON.stringify(a))
+
+ navigate("/shoppingcart")
 
 }
 
 localStorage.setItem("carrinho",JSON.stringify(data))
 
-
+navigate("/shoppingcart")
  }
 
 

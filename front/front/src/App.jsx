@@ -9,7 +9,7 @@ import Login from './page/Login';
 import PrivateRoute from './PrivateRoute';
 import "./app.css"
 import Profile from './page/Profile';
-import Product from './page/Productone';
+ import Product from './page/Productone';
 import Payment from './page/payment';
 import ShoppingCart from './page/ShoppingCart';
 

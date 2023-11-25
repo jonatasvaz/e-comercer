@@ -54,8 +54,8 @@ function Navba() {
                 aria-haspopup="true"
                 onClick={handleMenu}
                 color="inherit"
-              
-              >
+                className='bt'
+              > 
                 <AccountCircle />
               </IconButton>
               <Menu
