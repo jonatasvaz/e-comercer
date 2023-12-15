@@ -36,7 +36,20 @@ const Product = sequelize.define("product", {
   descriptio: {
     type: DataTypes.TEXT,
  
+  }, 
+  imageName: {
+    type: DataTypes.TEXT,
+ 
+  }, 
+  imageUrl: {
+    type: DataTypes.TEXT,
+ 
   }
+
+
+
+
+
 },
 {
   timestamps: false

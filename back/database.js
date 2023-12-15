@@ -1,12 +1,12 @@
 const { Sequelize } = require('sequelize');
 
 
-  const sequelize = new Sequelize('user', 'root', 'mypassword', {
+  const sequelize = new Sequelize('user', 'root', 'jhonegame123', {
     host: 'localhost',
     dialect: 'mysql',
     port: 3306
-  });
-  
+  }) ;
+    
   try {
     sequelize.authenticate();
     console.log('Conexão bem sucedida.');
