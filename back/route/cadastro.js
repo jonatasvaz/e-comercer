@@ -5,6 +5,11 @@ const productController = require("../controllers/productController")
 const shoppingcart = require("../controllers/shoppingCart.Controller")
 //const upload = require("../controllers/upload")
 
+const multer = require("multer")
+
+const storage = multer.memoryStorage()
+ const upload = multer({ storage: storage })
+
 const checkToken = require("../middleware/index");
 
 
@@ -14,7 +19,7 @@ router.post("/login",cadastroController.createLogin)
 
 router.get("/user/:id",checkToken, cadastroController.userValidation)
 
-router.post("/store",productController.createProduct  )
+router.post("/store",upload.single("image"),productController.createProduct  )
 
 router.get("/store",  productController.getProducts )
 

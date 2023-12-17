@@ -9,7 +9,8 @@ const Cadastro = require("./route/cadastro")
 app.use(bodyParse.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 var cors = require('cors')
-
+app.set('view engine', 'ejs')
+app.use(express.static("public"))
 app.use(cors())
 
 

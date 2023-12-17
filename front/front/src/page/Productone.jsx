@@ -71,7 +71,7 @@ console.log(produto)
       return(
         <div className='mainproduct'>
          <div className='imagem'>
-          <img src={laptop}/>
+          <img src={produto.imageUrl}/>
          </div>
      
         <div className='info'>

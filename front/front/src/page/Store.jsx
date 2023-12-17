@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import laptop from "../upload/laptop.jpg"
+
 import "./Store.css"
 import { Link } from 'react-router-dom';
 
@@ -10,6 +10,8 @@ function Store() {
 
 
  const [allProduct,setAllProduct]=useState([])
+
+ console.log(allProduct)
   useState(()=>{
      axios.get("http://localhost:3000/store")
      .then((res)=>  {
@@ -25,7 +27,7 @@ function Store() {
   
     <div className='card' key={item.id}>
         <div className='imgg'>
-        <img src={laptop}/>
+        <img src={item.imageUrl}/>
         </div>
         <div>
            <h1 className='nameproduct'>{item.name_}</h1>
