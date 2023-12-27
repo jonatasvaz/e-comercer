@@ -17,30 +17,26 @@ function Productone() {
  const handleAdd= async(e)=>{
 e.preventDefault()
 
-const data= [{
-  id:produto.id,
-  name:produto.name_,
-  price:produto.price,
-  brand:produto.brand
-}]
-console.log(data)
-const getItem = JSON.parse(localStorage.getItem("carrinho"))
 
-const get =[]
-if(getItem){
- 
-  const a= data.push(getItem)
-  console.log(a)
- localStorage.setItem("carrinho",JSON.stringify(a))
+    const post = await axios.post("http://localhost:3000/shoppingcart",{
+      product:produto.name_,
+      descriptio:produto.descriptio,
+      price:produto.price,
+      amaunt:produto.countInStock,
+      imageUrl:produto.imageUrl,
+      product_id:produto.id
+    })
+    if(post){
+      navigate("/shoppingcart")
+    }
+     
 
- navigate("/shoppingcart")
+console.log("errro")
+
+
+
 
 }
-
-localStorage.setItem("carrinho",JSON.stringify(data))
-
-navigate("/shoppingcart")
- }
 
 
     useEffect(() => {

@@ -7,37 +7,33 @@ const shoppingcart = sequelize.define("shoppingcart", {
         autoIncrement: true,
         allowNull: false,
         primaryKey: true
-    },  
-    name_product: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
+    },
+    
+    product: {
+      type: DataTypes.STRING,
+      allowNull:null
+    },
+    descriptio: {
+      type: DataTypes.STRING,
+      allowNull:null
+    },
+    amaunt: {
+      type: DataTypes.INTEGER,
+      allowNull:null
+    }, 
+   
+    price: {
+      type: DataTypes.INTEGER, 
+   
+    }, 
   
-  amauntstock: {
-    type: DataTypes.INTEGER,
-    allowNull:null
-  },
- 
-  price: {
-    type: DataTypes.INTEGER, 
- 
-  },
-  user_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
- 
-  },
-  countInStock: {
-    type: DataTypes.INTEGER,
- 
-  }, 
   product_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
-  quantity: {
-    type: DataTypes.INTEGER ,
-    allowNull: false,
+  imageUrl: {
+    type: DataTypes.STRING,
+    allowNull:null
   }
 },
 {

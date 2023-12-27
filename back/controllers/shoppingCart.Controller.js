@@ -1,4 +1,5 @@
 const modelShoppingcart = require("../model/modelShoppingcart")
+const shoppingcartid =require("../model/modelProduct")
 const cookieParser = require('cookie-parser');
 const express = require("express");
 const app = express();
@@ -10,7 +11,7 @@ const shoppingcart ={
     addShoppingCart : async(req,res)=>{
        
         try {
-            const { id, name_product, amauntstock,price,user_id,product_id,quantity } = req.body;
+            const { id,product,descriptio,price,amaunt,imageUrl,product_id } = req.body;
         
           
             //const expirationDate = new Date();
@@ -18,30 +19,29 @@ const shoppingcart ={
         
             // Verifique se o produto já está no carrinho do usuário
             const carrinhoExistente = await modelShoppingcart.findOne({
-              where: { user_id, product_id },
+              where: {  product_id },
             });
-            if (carrinhoExistente) {
+            if (carrinhoExistente ) {
                 // Atualize a quantidade e o tempo de expiração se o produto já estiver no carrinho
                 await carrinhoExistente.update({
-                  quantity: carrinhoExistente.quantity + quantity,
+                  amaunt: carrinhoExistente.amaunt + amaunt,
                
                 });
               } else {
                 // Adicione o produto ao carrinho se não estiver presente
-                await CarrinhoCompras.create({
+                await modelShoppingcart.create({
                     id,
+                    product,
+                    descriptio,
+                    price,
+                    amaunt,
+                    imageUrl,
                   product_id,
-                  name_product,
-                  amauntstock,
-                  price,
-                  quantity,
-                 
-                });
+
+                  });
               }
           // Atualize os cookies no lado do cliente
-    res.cookie('user_id', id);
-    res.cookie('carrinho', 'dados do carrinho'); // Atualize com os dados reais do carrinho
-
+   
     res.status(201).json({ message: 'Produto adicionado ao carrinho com sucesso' });
             }catch (error) {
                 console.error('Erro ao adicionar ao carrinho:', error);
@@ -49,8 +49,21 @@ const shoppingcart ={
               }
          
 
-        }
+        },
+
+        GetShoppingCart : async(req,res)=>{
+
+     const allproduct= modelShoppingcart.findAll()
+
+     if(allproduct){
+             res.send(allproduct)
+     }else{
+res.send("product no found")
+        } }
 }
 
 module.exports = shoppingcart
 
+
+
+//vou ter que criar um quantify em

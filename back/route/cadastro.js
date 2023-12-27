@@ -18,7 +18,7 @@ router.post("/register", cadastroController.createCadastro);
 router.post("/login",cadastroController.createLogin)
 
 router.get("/user/:id",checkToken, cadastroController.userValidation)
-
+ 
 router.post("/store",upload.single("image"),productController.createProduct  )
 
 router.get("/store",  productController.getProducts )
@@ -26,4 +26,7 @@ router.get("/store",  productController.getProducts )
 router.get("/store/:id",productController.getOneProduct)
 
 router.post("/shoppingcart",shoppingcart.addShoppingCart)
+
+router.get("/shoppingcart",shoppingcart.GetShoppingCart)
+
 module.exports = router; 
