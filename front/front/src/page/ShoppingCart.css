@@ -1,5 +1,21 @@
-@media (min-width: 1025px) {
-    .h-custom {
-    height: 100vh !important;
+.cart{
+    margin: auto;
+    display: flex;
+    width: 70%;
+    height: 210px;
+    margin-top: 40px;
+    background-color: blueviolet;
+}
+
+.imgcart{
+background-color: chartreuse;
+height: 100%;
+width: 250px;
+}
+
+.imgcart img{
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
     }
-    }
+    

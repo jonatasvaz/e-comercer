@@ -61,7 +61,7 @@ const generateFileName = (bytes = 32) => crypto.randomBytes(bytes).toString('hex
 
         for (let post of find) {
           post.imageUrl= await getObjectSignedUrl(post.imageName)
-          console.log(find)
+         
           }
         res.send(find)
 

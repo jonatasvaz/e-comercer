@@ -11,7 +11,7 @@ const shoppingcart ={
     addShoppingCart : async(req,res)=>{
        
         try {
-            const { id,product,descriptio,price,amaunt,imageUrl,product_id } = req.body;
+            const { id,product,descriptio,price,amaunt,imageUrl,product_id,user_id } = req.body;
         
           
             //const expirationDate = new Date();
@@ -37,7 +37,7 @@ const shoppingcart ={
                     amaunt,
                     imageUrl,
                   product_id,
-
+                    user_id
                   });
               }
           // Atualize os cookies no lado do cliente
@@ -52,14 +52,60 @@ const shoppingcart ={
         },
 
         GetShoppingCart : async(req,res)=>{
+          const userId = req.params.id;
+          console.log(userId +"kkkkkkkkkkkkkkkkkkkkk")
+          try {
+            const userProducts = await modelShoppingcart.findAll({
+              where: { user_id: userId },
+            });
+        
+            if (userProducts.length > 0) {
+              res.send(userProducts);
+            } else {
+              res.send('Nenhum produto encontrado para este usuário.');
+            }
+          } catch (error) {
+            console.error('Erro ao obter produtos do carrinho:', error);
+            res.status(500).send('Erro interno do servidor');
+          } },
 
-     const allproduct= modelShoppingcart.findAll()
 
-     if(allproduct){
-             res.send(allproduct)
-     }else{
-res.send("product no found")
-        } }
+        DeleteProduct : async(req,res)=>{
+         
+         /*/
+          const id = req.body.id
+         console.log(id)
+        
+           
+           const del=  await modelShoppingcart.destroy({ where: { id: id } });
+                 if(del){
+                  res.status(200).json({ message: 'Produto excluído com sucesso.'})
+                  return
+                 }
+         
+          
+            res.status(404).json({ message: 'Produto não encontrado no carrinho.' });
+             /*/
+
+             try {
+              const productId = req.body.id;
+          
+              // Verifica se o produto está no carrinho
+              const productToDelete = await modelShoppingcart.findByPk(productId);
+          
+              if (productToDelete) {
+                // Se o produto estiver no carrinho, exclua-o
+                await productToDelete.destroy();
+          
+                res.status(200).json({ message: 'Produto excluído com sucesso.' });
+              } else {
+                res.status(404).json({ message: 'Produto não encontrado no carrinho.' });
+              }
+            } catch (error) {
+              console.error('Erro ao excluir produto do carrinho:', error);
+              res.status(500).json({ message: 'Erro interno do servidor.' });
+            }
+        }
 }
 
 module.exports = shoppingcart

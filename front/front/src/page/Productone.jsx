@@ -11,7 +11,8 @@ function Productone() {
     const [produto, setProduto] = useState();
     const [quantity, setQuantity] = useState(1);
     
-  
+    const auth =  localStorage.getItem("userId")
+   
 
 
  const handleAdd= async(e)=>{
@@ -24,7 +25,8 @@ e.preventDefault()
       price:produto.price,
       amaunt:produto.countInStock,
       imageUrl:produto.imageUrl,
-      product_id:produto.id
+      product_id:produto.id,
+      user_id:auth
     })
     if(post){
       navigate("/shoppingcart")

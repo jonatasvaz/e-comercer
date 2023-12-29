@@ -34,6 +34,10 @@ const shoppingcart = sequelize.define("shoppingcart", {
   imageUrl: {
     type: DataTypes.STRING,
     allowNull:null
+  },
+  user_id: {
+    type: DataTypes.INTEGER,
+    allowNull:null
   }
 },
 {

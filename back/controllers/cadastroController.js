@@ -72,13 +72,18 @@ const cadastroController = {
  
      const token = jwt.sign(
        {
-         id: user._id,         
+         id: user.id,         
        },
        "bb2ub4iuh67u9y4gufn"   
      );
-   
+   const id= user.id
+   console.log(id + " achei")
          console.log(token) 
-     res.status(200).json({ msg: "Autenticação realizada com sucesso!", token });
+     res.status(200).json({ msg: "Autenticação realizada com sucesso",
+      token,
+      id
+      
+     });
    } catch (error) { 
      res.status(500).json({ msg: error });
    } 

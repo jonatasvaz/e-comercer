@@ -33,10 +33,12 @@ function Login() {
      console.log(response)
       if(response){
         const token= response.data.token
-      
+        const id= response.data.id
        
-          localStorage.setItem("token", token);
+      console.log(JSON.stringify(id)  + "here my id")
        
+          localStorage.setItem("token", JSON.stringify(token) );
+          localStorage.setItem('userId', id);
        
 
         setAuthToken(token)

@@ -27,6 +27,9 @@ router.get("/store/:id",productController.getOneProduct)
 
 router.post("/shoppingcart",shoppingcart.addShoppingCart)
 
-router.get("/shoppingcart",shoppingcart.GetShoppingCart)
+router.get("/shoppingcart/:id",shoppingcart.GetShoppingCart)
+
+router.delete("/shoppingcart",shoppingcart.DeleteProduct)
+
 
 module.exports = router; 
