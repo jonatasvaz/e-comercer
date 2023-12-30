@@ -19,7 +19,7 @@ const shoppingcart ={
         
             // Verifique se o produto já está no carrinho do usuário
             const carrinhoExistente = await modelShoppingcart.findOne({
-              where: {  product_id },
+              where: {  product_id ,user_id},
             });
             if (carrinhoExistente ) {
                 // Atualize a quantidade e o tempo de expiração se o produto já estiver no carrinho

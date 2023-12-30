@@ -9,6 +9,7 @@ import { useState } from "react";
     export default function ShoppingCart() {
     const [item,setItem]= useState([])
     const [quantity, setQuantity] = useState(1);
+    console.log(item)
   useEffect(()=>{
  
     const userId = localStorage.getItem('userId');
@@ -21,10 +22,11 @@ import { useState } from "react";
   
   const getShoppingCart = async (userId) => {
     const res = await axios.get(`http://localhost:3000/shoppingcart/${userId}`)
-    .then((res)=>  {
-      console.log(res.data)
-      setItem(res.data)
-      }).catch(err => console.log(err))
+    console.log(res.data + "test")
+      if(res){
+        setItem(res.data)
+      }
+
   };
 
 
@@ -83,7 +85,7 @@ import { useState } from "react";
 
     return (
     <div>
-  { getAllProducts }
+  {item ? getAllProducts: <h1>no products on shopping cart</h1> }
   <div>
             <button>finalize purchase</button>
            </div>
