@@ -56,3 +56,27 @@ justify-items: center
 
 
 }
+
+@media (max-width: 1000px) {
+    .cards{
+        display: grid;
+        grid-template-columns: 1fr  ;
+        
+        margin-top: 200px;
+        align-items: center;
+        justify-items: center
+        }
+        .cards div{
+            width: 290px;
+            height:400px;
+            background-color: rgb(188, 188, 189);
+            border-radius: 6px;
+            margin-top: 45px;
+        }
+
+        .text{
+            font-size: 17px;
+            padding: 10px 1px;
+            margin-top: 40px;
+        }
+  }

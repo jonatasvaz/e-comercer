@@ -1,10 +1,11 @@
-.cart{
+.cart-shopping{
     margin: auto;
     display: flex;
-    width: 70%;
+    width: 65%;
     height: 210px;
     margin-top: 40px;
     background-color: blueviolet;
+    border-radius: 8px;
 }
 
 .imgcart{
@@ -18,4 +19,46 @@ width: 250px;
     overflow: hidden;
     height: 100%;
     }
-    
+    .info{
+       background-color: rgb(244, 226, 226);
+       width: 90%;
+       padding: 15px 15px;
+        }
+
+        .btns{
+           display: flex;
+             margin-top: 30px;
+             height: 40px;
+             padding-bottom: 2px;
+              }
+        .quantify{
+           margin-right: 50px;
+            height: 20px;
+            margin-bottom: 4px;
+            
+             }
+
+             .delete{
+              border: none;
+                 background-color: none;
+                 background-color: rgb(244, 226, 226);
+                
+                  } 
+                  
+ .btn-pay{
+ width: 100%;
+
+ text-align: center;
+        } 
+
+ .btn-pay button{
+            font-size: 30px;
+            margin-top: 60px;
+           text-align: center;
+           height: 60px;
+           border-radius: 6px;
+           padding: 6px 9px;
+           background-color: rgb(46, 220, 46);
+           color: #fff;
+           font-weight: 500;
+             }                       

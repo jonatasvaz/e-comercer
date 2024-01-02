@@ -56,20 +56,21 @@ import { useState } from "react";
 
     return(
      
-      <div className='cart' key={item.id}>
+      <div className='cart-shopping' key={item.id}>
           <div className='imgcart'>
           <img src={item.imageUrl}/>
           </div>
-          <div>
+          <div className="info">
              <h1 className='nameproduct'>{item.name}</h1>
-             <p className='price'>€{quantity*item.price},00</p>
              <p className='description'>{item.descriptio}</p>
+             <p className='price'>€{quantity*item.price},00</p>
              <div>
-             <input type='number' min="1" max="6" value={quantity} onChange={e => setQuantity(e.target.value)}/>
-             <button onClick={() => deleteProduct(item.id)}>
+              <div className="btns">
+             <input className="quantify" type='number' min="1" max="6" value={quantity} onChange={e => setQuantity(e.target.value)}/>
+             <button className="delete" onClick={() => deleteProduct(item.id)}>
              <DeleteOutlinedIcon/>
              </button>
-          
+             </div>
              </div>
             
           </div>
@@ -86,8 +87,8 @@ import { useState } from "react";
     return (
     <div>
   {item ? getAllProducts: <h1>no products on shopping cart</h1> }
-  <div>
-            <button>finalize purchase</button>
+  <div className="btn-pay">
+            <button >finalize purchase</button>
            </div>
     </div>
     );

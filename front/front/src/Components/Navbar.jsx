@@ -37,7 +37,7 @@ function Navba() {
   return (
     <Navbar bg="light" expand="lg" className='navbar'>
     <Container className='container'>
-      <Navbar.Brand href="#home">Logo</Navbar.Brand>
+      
       
     
         <Nav className="me-auto">
