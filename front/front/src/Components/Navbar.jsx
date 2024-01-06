@@ -56,8 +56,9 @@ function Navba() {
                 color="inherit"
                 className='bt'
               > 
-                <AccountCircle />
+               <AccountCircle />
               </IconButton>
+              
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}

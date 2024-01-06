@@ -20,10 +20,10 @@ width: 250px;
     height: 100%;
     }
     .info{
-       background-color: rgb(244, 226, 226);
-       width: 90%;
-       padding: 15px 15px;
-        }
+      background-color: rgb(244, 226, 226);
+      width: 90%;
+      padding: 15px 15px;
+       }
 
         .btns{
            display: flex;
@@ -86,4 +86,16 @@ width: 250px;
               color: #fff;
               font-weight: 500;
                 }
+
+                .info{
+                  background-color: rgb(244, 226, 226);
+                  width: 100%;
+                 
+                   }
+                   .imgcart{
+                     background-color: chartreuse;
+                     height: 100%;
+                     width: 243px;
+                
+                     }
                }

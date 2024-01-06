@@ -72,7 +72,7 @@ console.log(produto)
           <img src={produto.imageUrl}/>
          </div>
      
-        <div className='info'>
+        <div className='info-one'>
         <h2 className='name-product'>{produto.name_}</h2>
         <p className='description-product'>{produto.descriptio}</p>
         <p className='price-product'>price:  €{produto.price},00</p>
